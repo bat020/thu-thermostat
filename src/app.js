@@ -1,6 +1,7 @@
 $( document ).ready(function() {
   var thermostat = new Thermostat();
   updateTemp();
+  updateWeather();
 
   function updateTemp() {
     var temp = thermostat.temperature
@@ -23,6 +24,7 @@ $( document ).ready(function() {
 
   $('#reset').click(function() {
     thermostat.reset();
+    updateWeather();
     updateTemp();
   });
 
@@ -30,5 +32,13 @@ $( document ).ready(function() {
     thermostat.togglePowerSaving();
     updateTemp();
   });
+
+  function updateWeather() {
+    $.getJSON( 'http://api.openweathermap.org/data/2.5/weather', {q: 'London,uk'}, function(data) {
+      $('#weather_info').text(data.main.temp);
+
+    });
+
+  };
 
 });
