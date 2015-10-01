@@ -6,10 +6,10 @@ $( document ).ready(function() {
 
   function updateTemp() {
     var temp = thermostat.temperature
-    var colour = '#CC1559';
-    if (temp < 25) {colour = '#FF6600'};
-    if (temp < 18) {colour = '#2C6700'};
-    $('#temp_display').attr('style', 'color:' + colour);
+    var colour = '#ff3300';
+    if (temp < 25) {colour = '#e6b800'};
+    if (temp < 18) {colour = '#009900'};
+    $('#temp_display').css('color', colour);
     $('#show_temperature').text(temp);
   };
 
