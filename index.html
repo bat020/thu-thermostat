@@ -8,29 +8,6 @@
 
   <body>
 
-    <script>
-
-    /*
-    Counter script
-    By JavaScript Kit (http://javascriptkit.com)
-    Over 400+ free scripts here!
-    Above notice MUST stay entact for use
-    */
-
-    function fakecounter(){
-
-    //decrease/increase counter value (depending on perceived popularity of your site!)
-    var decrease_increase=00000
-
-    var counterdate=new Date()
-    var currenthits=counterdate.getTime().toString()
-    currenthits=parseInt(currenthits.substring(2,currenthits.length-4))+decrease_increase
-
-    document.write("You are visitor # <b>"+currenthits+"</b> to my site!")
-    }
-    fakecounter()
-    </script>
-
     <p id='temp_display' ><span style="font-size: 50px; margin: 10px 0"><span id='show_temperature'>XX</span>&deg;C</span></p>
     <div class="container">
       <p><button id='up' type="button"> UP</button>
@@ -43,9 +20,10 @@
 
     <p>Select city: <input type='text' id='city_box' autofocus> <button type='submit' id='city_button'>Submit</button></p>
 
-    <script src='jquery.js'></script>
-    <script src='src/app.js'></script>
   </body>
 
+  <script src='jquery.js'></script>
+  <script src='src/app.js'></script>
   <script src='src/Thermostat.js'></script>
+
 </html>

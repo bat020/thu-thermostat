@@ -40,6 +40,12 @@ $( document ).ready(function() {
     updateWeather();
   });
 
+  $('#city_box').keypress(function(key) {
+    if (key.which === 13) {
+      $('#city_button').click();
+    }
+  });
+
   function updateWeather() {
     $.getJSON( 'http://api.openweathermap.org/data/2.5/weather', {q: city}, function(data) {
       $('#weather_info').text(prettyWeather(data.main.temp));
