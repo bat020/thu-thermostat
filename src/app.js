@@ -1,5 +1,6 @@
 $( document ).ready(function() {
   var thermostat = new Thermostat();
+  var city = 'London, UK'
   updateTemp();
   updateWeather();
 
@@ -33,12 +34,20 @@ $( document ).ready(function() {
     updateTemp();
   });
 
+  $('#city_button').click(function() {
+    city = $('#city_box').val();
+    $('#city_box').val('');
+    updateWeather();
+  });
+
   function updateWeather() {
-    $.getJSON( 'http://api.openweathermap.org/data/2.5/weather', {q: 'London,uk'}, function(data) {
-      $('#weather_info').text(data.main.temp);
-
+    $.getJSON( 'http://api.openweathermap.org/data/2.5/weather', {q: city}, function(data) {
+      $('#weather_info').text(prettyWeather(data.main.temp));
     });
+  };
 
+  function prettyWeather(kelvin) {
+    return 'Current temperature in ' + city + ': ' + Math.round(kelvin - 273.15) + "\xB0C";
   };
 
 });
