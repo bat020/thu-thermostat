@@ -2,9 +2,6 @@
 
 body{
 
-	/*margin: 20px 0px 0px 100px;
-
-	max-width: 800px;*/
 
 	background-color: #cccccc;
 
@@ -12,23 +9,56 @@ body{
 
 	}
 
-div#container {
-
-  margin: 20px auto;
-  width: 350px;
-  background-color: #eeeeee;
-  padding: 10px 20px;
-
-  }​
 
 
 
-p{
+ p{
 
-	font: 30px Times, serif;
+  	font: 20px Helvetica, sans-serif;
 
-	line-height: 2.5;
+  	line-height: 1.2;
+
+  }
+
+
+  button{
+
+    height: 36px;
+    padding: 5px 10px;
+    background: #cccccc;
+    border: 1px solid #bbbbbb;
+    font: 20px Helvetica, sans-serif;
+
+  }
+
+
+
+button:hover {
+
+	background-color: #dddddd;
 
 }
 
-​
+button:active {
+
+	border: 1px solid #000000;
+
+}
+
+
+input {
+  font: 20px Helvetica, sans-serif;
+
+  line-height: 1.2;
+}
+
+
+
+  div#container {
+
+    margin: 20px auto;
+    width: 450px;
+    background-color: #eeeeee;
+    padding: 10px 20px;
+
+    }​
